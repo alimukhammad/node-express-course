@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-router.route('/').get((req, res)=>{
-    res.send('all items - from tasks.js');
-})
+const {getAllTasks} = require('../controllers/tasks')
 
-model.express = router; //exporting the router
+router.route('/').get(getAllTasks) //
+
+module.exports = router; //exporting the router
